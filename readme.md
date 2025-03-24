@@ -1,31 +1,34 @@
-# PositionID – Die Grundidee
+# **The Core Idea**
 
-## Motivation
-Schon seit langer Zeit wollte ich mir interessante Backgammon-Stellungen merken, um sie später mit GNU Backgammon oder BGBlitz zu analysieren. Besonders dann, wenn ich eine andere Zugwahl getroffen hätte oder eine Take/Pass-Entscheidung anders bewertet hätte.
+Whenever I watched others play Backgammon, I wanted to remember certain positions to analyze them later with GNU BG (and later BGBlitz). Especially when I would have played a different move or chosen **take** instead of **pass**.
 
-Früher hatte ich immer einen Block mit einem vorgezeichneten Board dabei. Doch während eines Spiels bleibt kaum Zeit, eine Stellung sauber zu notieren – die Mitspieler warten schließlich nicht. Später musste ich die Positionen dann mühsam in GNU BG eingeben, um endlich eine Analyse durchzuführen und zu verstehen, warum der Spieler eine andere Entscheidung getroffen hat als ich.
+I used to carry a **paper notebook** with a pre-drawn board, but quickly noting a position was stressful since the game wouldn't wait for me.  
+On top of that, manually entering these positions into GNU BG was tedious before I could finally analyze them and understand why the player didn't choose my move.
 
-Viele Jahre später bieten moderne Technologien eine wesentlich komfortablere Lösung für dieses Problem. Und genau hier setzt **PositionID** an.
+**Many years later, technology now offers ways to solve this problem in a much more efficient way.**
 
-## Die Lösung
-Anstatt hektisch zu schreiben, mache ich einfach ein Foto oder einen Screenshot des Boards.
+## **A Better Solution Than Frantic Writing?**
 
-Ein Tool analysiert dieses Bild und erkennt die Backgammon-Stellung. Falls wichtige Informationen fehlen oder unklar sind, werden sie interaktiv abgefragt, z. B.:
-- **Match- oder Moneygame?**
-- **Aktueller Matchstand?**
-- **Cube-Position und -Wert?**
-- **Homeboard links oder rechts?**
-- **Fehlende Steine: auf der Bar oder bereits ausgespielt?**
+- I simply take a **photo** of the board (or a **screenshot**).  
+- A **tool** analyzes the image and recognizes the Backgammon position.  
+- It asks for missing or unclear information, such as:  
+  - **Money game or match play?**  
+  - **Current match score?**  
+  - **Where is the cube? What level?**  
+  - **Is the home board on the left or right?**  
+  - **If checkers are missing, are they played out or on the bar?**  
+- Once everything is clear, the tool converts the detected position into a **XGID/GNU ID**.
 
-Sobald alle Daten vorliegen, wandelt das Tool die Position in eine **XGID** oder **GNU ID** um. Diese ID kann dann direkt in **BGBlitz**, **GNU Backgammon** oder **XG Gammon** zur Analyse genutzt werden.
+This **ID** can then be used in **BGBlitz, GNU BG, or XG Gammon** for further analysis.
 
-## Technischer Überblick
-- **Plattformunabhängig**: Das Tool soll auf **Mac, Windows, Linux, iOS und Android** laufen – lokal, ohne Serverabhängigkeit.
-- **Bilderkennung**: In der ersten Phase wird **OpenCV** zur Bilderkennung verwendet. Später könnte eine eigene, speziell trainierte KI diese Aufgabe übernehmen.
-- **Frontend**: Noch offen – möglicherweise eine plattformunabhängige Web-App.
-- **Erste Schritte**: Da ich in diesen Bereichen noch keine Erfahrung habe, starte ich mit einem **Python-Kurs**, um die Grundlagen zu erlernen.
+---
 
-## Projektorganisation
-- Alle Dokumente – auch temporäre Zwischenschritte – werden auf **GitHub** gespeichert und versioniert.
-- Ein **Projekttagebuch** soll Fortschritte, Rückschläge und Herausforderungen dokumentieren.
+## **First Technical Draft**
 
+- The tool should run **locally** on all major platforms (**Mac, Windows, Linux, iOS, Android**).  
+- I don’t want to reinvent the wheel from the start—so I’ll build upon existing tools where possible.  
+- Image recognition will be done using **OpenCV**, later replaced by a **custom-trained AI model**.  
+- The **frontend** is still undecided.  
+- Since I currently have **zero** experience in these areas, I’ll start by taking a **Python course**.  
+- All documents (including temporary drafts) will be stored on **GitHub**.  
+- I will document **progress, challenges, and setbacks** in the form of a **project journal**.
